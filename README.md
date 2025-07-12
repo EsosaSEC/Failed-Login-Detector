@@ -13,3 +13,8 @@ A bash script to detect SSH brute-force attempts by analyzing failed login attem
 ## Dependencies
 - awk, grep, sort, uniq (standard on Linux).
 - /var/log/auth.log or equivalent.
+
+## Example Alert
+```bash
+[2025-07-11 11:17:00] ALERT: 6 failed login attempts from 127.0.0.1
+```
