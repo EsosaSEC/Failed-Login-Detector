@@ -3,7 +3,7 @@
 A bash script to detect SSH brute-force attempts by analyzing failed login attempts in `/var/log/auth.log`. Alerts are generated for IPs exceeding a threshold (default: 5 attempts) and written to an alert log.
 
 ## Usage
-1. Ensure `config.sh` is in the same directory as `ALERTS_LOG` and `AUTH_LOG` defined.
+1. Use this [`configuration file`](https://github.com/EsosaSEC/Configuration-file/blob/main/config.sh) file and ensure `ALERTS_LOG` and `AUTH_LOG` are defined in the file, and are in the same directory.
 2. Run:
    ```bash
    sudo ./failed_login.sh
@@ -13,7 +13,7 @@ A bash script to detect SSH brute-force attempts by analyzing failed login attem
 ## Dependencies
 - awk, grep, sort, uniq (standard on Linux).
 - /var/log/auth.log or equivalent.
-- config.sh
+- [config.sh](https://github.com/EsosaSEC/Configuration-file/blob/main/config.sh)
 
 ## Example Alert
 ```bash
