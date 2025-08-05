@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Failed login monitor for brute-force attempts (no time window)
+# Configuration file
 source ./config.sh
 
 # Check if log file exists
