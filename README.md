@@ -1,21 +1,27 @@
-# Failed Login Detector
 
-A bash script to detect SSH brute-force attempts by analyzing failed login attempts in `/var/log/auth.log`. Alerts are generated for IPs exceeding a threshold (default: 5 attempts) and written to an alert log.
+# FAILED LOGIN DETECTOR
 
-## Usage
-1. Use this [`configuration file`](https://github.com/EsosaSEC/Configuration-file/blob/main/config.sh) file and ensure `ALERTS_LOG` and `AUTH_LOG` are defined in the file, and are in the same directory.
-2. Run:
-   ```bash
-   sudo ./failed_login.sh
-   ```
-3. Check alerts in the specified log file (e.g., alerts/alerts.log) as described in the configuration file.
+A bash script to detect SSH brute-force attempts by analyzing failed login attempts in `/var/log/auth.log`. Alerts are generated for IPs exceeding a threshold (default: 5 attempts).
 
-## Dependencies
-- awk, grep, sort, uniq (standard on Linux).
-- /var/log/auth.log or equivalent.
-- [config.sh](https://github.com/EsosaSEC/Configuration-file/blob/main/config.sh)
+ ## Usage
+ 1. Update `AUTH_LOG` in the script to your log file path (e.g., `/var/log/auth.log` or a copied log).
+ 2. Run:
+    ```bash
+    sudo ./failed_login.sh
+    ```
+ 3. Check alerts in `./alerts/alerts.log`.
 
-## Example Alert
-```bash
-[2025-07-11 11:17:00] ALERT: 6 failed login attempts from 127.0.0.1
-```
+ ## Dependencies
+ - `awk`, `grep`, `sort`, `uniq` (standard on Linux).
+
+ ## Example Alert
+ ```
+ [2025-08-18 13:23:00] ALERT: 6 failed login attempts from 127.0.0.1
+ ```
+
+ ## Notes
+ - Fully standalone with no external configuration dependencies.
+ - Threshold adjustable via `FAILED_LOGIN_THRESHOLD` in the script.
+
+ ## Author
+ ESOSA OKONEDO
